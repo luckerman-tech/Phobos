@@ -1,0 +1,111 @@
+body {
+    background: linear-gradient(-45deg, yellow, white, yellow)
+}
+
+.blogpost {
+    margin: 0 auto;
+    max-width: 90vw;
+    min-height: 100vh
+}
+
+.blogpost p, .blogpost h1, .blogpost h3 {
+    word-wrap: break-word
+}
+
+.blogpost-title {
+    text-align: center;
+    font-weight: bolder;
+    cursor: default
+}
+
+.blogpost-author {
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: bold;
+    cursor: default
+}
+
+.blogpost-author > span {
+    font-style: italic
+}
+
+.blogpost-content {
+    line-height: 1.4;
+    font-family: 'Times New Roman';
+    font-size: 14pt;
+    margin-bottom: 25px
+}
+
+.blogpost-last-row {
+    display: flex;
+    align-items: center
+}
+
+.blogpost-last-row > small {
+    color: grey;
+    font-weight: bold
+}
+
+.blogpost-last-row > .btn {
+    margin-left: auto;
+    width: 120px;
+    font-size: 14pt
+}
+
+.blogpost-last-row > .btn:hover {
+    background-color: darkblue
+}
+
+.comments-title {
+    font-weight: bold;
+    margin-bottom: 15px
+}
+
+.comments-no-auth {
+    color: red;
+    font-size: 14pt
+}
+
+.form-add-comment .form-control, .form-add-comment #btn-submit {
+    min-width: 33vw !important;
+    border: 1px solid black
+}
+
+.form-add-comment .form-control {
+    resize: none;
+    border-radius: 10px
+}
+
+.form-add-comment .form-control:focus {
+    border: 2px solid grey;
+    box-shadow: black 1px 1px;
+    background-color: cornsilk
+}
+
+.form-add-comment #btn-submit {
+    font-size: 14pt
+}
+
+.comment-hr {
+    border-bottom: 1px dashed black
+}
+
+.no-comments-message {
+    color: blue;
+    font-size: 14pt
+}
+
+.comment-header {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 10px
+}
+
+.my-comment {
+    color: forestgreen
+}
+
+.comment-text {
+    font-family: 'Times New Roman';
+    font-size: 12pt
+}

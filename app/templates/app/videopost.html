@@ -1,0 +1,36 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/videopost.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <section class="videopost">
+        <h1 class="videopost-title">{{ title }}</h1>
+        <article class="video-article">
+            <h3 class="video-label">Видео №1</h3>
+            <video class="video-video" controls="controls" poster="{% static 'app/media/poster_1.jpg' %}" preload="auto">
+                <source src="{% static 'app/media/video_1.mp4' %}"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                <source src="{% static 'app/media/video_1.webm' %}" type='video/webm; codecs="vp8, vorbis"' />
+                <source src="{% static 'app/media/video_1.ogv' %}"  type='video/ogg; codecs="theora, vorbis"' />
+                <div class="video-fallback">
+                    <span class="video-error">Это видео не поддерживается вашим браузером</span>
+                    <a class="video-href btn btn-info" href="{% static 'app/media/video_1.mp4' %}">Скачайте видео</a>
+                </div> 
+            </video>
+        </article>
+        <article class="video-article">
+            <h3 class="video-label">Видео №2</h3>
+            <video class="video-video" controls="controls" poster="{% static 'app/media/poster_2.jpg' %}" preload="auto">
+                <source src="{% static 'app/media/video_2.mp4' %}"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                <source src="{% static 'app/media/video_2.webm' %}" type='video/webm; codecs="vp8, vorbis"' />
+                <source src="{% static 'app/media/video_2.ogv' %}"  type='video/ogg; codecs="theora, vorbis"' />
+                <div class="video-fallback">
+                    <span class="video-error">Это видео не поддерживается вашим браузером</span>
+                    <a class="video-href btn btn-info" href="{% static 'app/media/video_2.mp4' %}">Скачайте видео</a>
+                </div> 
+            </video>
+        </article>
+    </section>
+{% endblock %}

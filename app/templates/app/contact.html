@@ -1,0 +1,29 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/contact.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="contact">
+        <h1 class="contact-title">{{ title }}</h1>
+        <div class="contact-info">
+            <p>
+                <i class="fa-solid fa-phone"></i><i> Телефон: </i> 
+                <a href="tel:+79117777777">+7 (911) 777-77-77</a>
+            </p>
+            <p>
+                <i class="fa-sharp-duotone fa-regular fa-envelope"></i><i> Email: </i> 
+                <a href="mailto:fobostech@gmail.com">fobostech@gmail.com</a>
+            </p>
+        </div>
+        <br />
+        <div class="contact-developer-info">
+            <h3>О разработчике</h3>
+            <p><i class="fa-solid fa-user"></i><strong> Имя: </strong>Luckerman77</p>
+            <p><i class="fa-sharp-duotone fa-regular fa-envelope"></i><strong> Email: </strong><a href="mailto:dmen01877@gmail.com">dmen01877@gmail.com</a></p>
+            <p><i class="fa-brands fa-telegram"></i><strong> Telegram: </strong><a href="https://t.me/Luckerman77" target="_blank">https://t.me/Luckerman77</a></p>
+        </div>
+    </div>
+{% endblock %}

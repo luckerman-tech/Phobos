@@ -1,0 +1,17 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/registration.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="registration">
+        <h1 class="registration-title">{{ title }}</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ regform.as_p }}
+            <input type="submit" class="save btn btn-default" id="btn-reg" name="btn-reg" value="Зарегистрироваться" />
+        </form>
+    </div>
+{% endblock %}

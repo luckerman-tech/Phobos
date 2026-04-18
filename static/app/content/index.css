@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Century+Gothic&display=swap');
+
+body {
+    background: linear-gradient(120deg, lightyellow 0%, lightgreen 100%)
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px
+}
+
+#myCarousel {
+    width: 60vw
+}
+
+#myCarousel img {
+    height: auto;
+    width: 60vw;
+    object-fit: cover
+}
+
+#myCarousel .carousel-text {
+    font-size: 14pt;
+    font-family: 'Times New Roman'
+}
+
+#myCarousel .btn {
+    background-color: blue;
+    color: white
+}
+
+.index {
+    display: flex;
+    min-height: 100vh
+}
+
+.index p {
+    word-wrap: break-word
+}
+
+.index-left-part {
+    width: 60%;
+    padding-right: 15px
+}
+
+.logo {
+    display: flex
+}
+
+.logo > img {
+    height: 75px;
+    width: auto;
+    object-fit: cover
+}
+
+.logo > h1 {
+    font-family: 'GothicG', 'Century Gothic', 'Apple Gothic', sans-serif;
+    width: 80%;
+    text-align: center
+}
+
+.description > h4 {
+    text-shadow: 1px 1px 2px black
+}
+
+.description > p, .description > ul {
+    font-size: 16px
+}
+
+.description > em {
+    font-size: 20px;
+    color: red
+}
+
+.index-sep {
+    width: 0%;
+    border-left: 2px solid grey;
+    margin-top: 15px
+}
+
+.index-right-part {
+    width: 40%;
+    padding-left: 15px
+}
+
+.index-right-part > h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px
+}
+
+.index-right-part > .news-list {
+    display: flex;
+    flex-direction: column
+}
+
+.index-right-part > .news-list > .news-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 40vh;
+    background: linear-gradient(-45deg, lightgray, white, lightgray);
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px
+}
+
+.news-item > strong {
+    font-size: 18pt;
+    margin-bottom: 10px
+}
+
+.news-item > .news-author > span {
+    font-style: italic
+}
+
+.news-item > .news-desc {
+    line-height: 1.4;
+    font-family: 'Times New Roman';
+    font-size: 14pt;
+    margin-bottom: 15px
+}
+
+.news-item > .news-last-row {
+    margin-top: auto;
+    display: flex;
+    align-items: center
+}
+
+.news-item > .news-last-row > .news-date {
+    color: grey;
+    font-weight: bold
+}
+
+.news-item > .news-last-row > .btn {
+    margin-left: auto
+}
+
+.news-item > .news-last-row > .btn:hover {
+    background-color: darkblue
+}
+
+.index-right-part > .no-news {
+    height: 100%;
+    font-size: 20px;
+    text-align: center;
+    align-content: center;
+    color: darkred
+}

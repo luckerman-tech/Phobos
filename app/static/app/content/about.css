@@ -1,0 +1,55 @@
+body {
+    background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%)
+}
+
+.about {
+    margin-top: 15px;
+    min-height: 100vh
+}
+
+.about-first-part {
+    display: flex;
+    background-color: yellowgreen;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px black;
+    font-size: xx-large;
+    text-align: center;
+    margin: 0 0 30px 0
+}
+
+.about-first-part > img {
+    object-fit: cover
+}
+
+.about-first-part > span {
+    align-content: center
+}
+
+.about-first-part q {
+    color: crimson
+}
+
+.about-first-part em {
+    color: slateblue
+}
+
+.about-title {
+    text-align: center;
+    color: #2c5282;
+    margin-bottom: 50px
+}
+
+.about-second-part {
+    display: flex;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.about-second-part > div {
+    padding-right: 20px
+}
+
+.about-second-part > img {
+    float: right;
+    object-fit: cover
+}

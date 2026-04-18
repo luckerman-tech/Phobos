@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Luckerman77" />
+    <meta name="description" content="Фобос — самый полный интерактивный гид по человеческим страхам. 
+          Ищи фобии по алфавиту, проходи тесты, слушай звуки страха и находи помощь. Там, где страшно, мы включаем свет!" />
+    <meta name="keywords" content="фобия, страх, страшно, тревожно, фобии, страхи, список фобий, список страхов, 
+          справочник фобий, страхи человека, редкие фобии, боязнь пауков, арахнофобия, 
+          боязнь высоты, акрофобия, боязнь замкнутых пространств, клаустрофобия, трипофобия, социофобия, как перестать бояться, 
+          психология страха, тест на фобию, лечить страх, психотерапия, тревога, панические атаки, 
+          интересные факты о страхе, самые странные фобии" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Фобос</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/awesome/css/all.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'app/media/favicon.ico' %}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'app/media/favicon.ico' %}" />
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand" id="logo"><img src="{% static 'app/media/phobos.png' %}" alt="logo" /></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                    <li><a href="{% url 'about' %}">О сайте</a></li>
+                    <li><a href="{% url 'contact' %}">Наши контакты</a></li>
+                    <li><a href="{% url 'links' %}">Полезные ресурсы</a></li>
+                    <li><a href="{% url 'pool' %}">Обратная связь</a></li>
+                    <li><a href="{% url 'blog' %}">Новости</a></li>
+                    {% if user.is_superuser %}<li><a href="{% url 'newpost' %}">Добавление новости</a></li>{% endif %}
+                    <li><a href="{% url 'videopost' %}">Полезные видео</a></li>
+                </ul>
+                {% include 'app/loginpartial.html' %}
+            </div>
+        </div>
+    </div>
+
+    <div class="body-content">
+        {% block content %}{% endblock %}
+        <hr class="hr-section" />
+        <footer>
+            <p>&copy; {{ year }} - Фобос. Справочник человеческих страхов</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

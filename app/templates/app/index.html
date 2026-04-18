@@ -1,0 +1,120 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/index.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="carousel-container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="{% static 'app/media/banner1.jpg' %}" alt="Первый слайд" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            <span class="carousel-text">Здесь страх перестаёт быть тайной. Более 500 фобий, тесты, истории людей и многое другое для тех, кто хочет узнать себя глубже.<br /><br /></span>                            
+                            <a class="btn btn-default" href="{% url 'blogpost' post_id=1 %}">Читать далее</a>
+                        </p>
+                        <br />
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{% static 'app/media/banner2.jpg' %}" alt="Второй слайд" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            <span class="carousel-text">Самая полная коллекция человеческих страхов. Ищи по алфавиту, категориям или просто листай — вдруг найдёшь свою фобию.<br /><br /></span>                            
+                            <a class="btn btn-default" href="{% url 'blogpost' post_id=5 %}">Читать далее</a>
+                        </p>
+                        <br />
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{% static 'app/media/banner3.jpg' %}" alt="Третий слайд" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            <span class="carousel-text">Не знаете, чего боитесь? Наши опросники помогут заглянуть в подсознание.<br /><br /></span>                           
+                            <a class="btn btn-default" href="{% url 'blogpost' post_id=6 %}">Читать далее</a>
+                        </p>
+                        <br />
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{% static 'app/media/banner4.jpg' %}" alt="Четвёртый слайд" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            <span class="carousel-text">Как звучит клаустрофобия? А талассофобия? Закройте глаза и погрузитесь в атмосферу. Для самых смелых.<br /><br /></span>                            
+                            <a class="btn btn-default" href="{% url 'blogpost' post_id=4 %}">Читать далее</a>
+                        </p>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div class="index">
+        <div class="index-left-part">
+            <div class="logo">
+                <img src="{% static 'app/media/phobos.png' %}" alt="logo" />
+                <h1>Фобос</h1>
+            </div>
+            <div class="description">
+                <h4>
+                    «Фобос» — это интерактивный гид по миру человеческих страхов. 
+                    Мы собираем и систематизируем фобии со всего света: от банальной боязни пауков до экзотических состояний, 
+                    о которых вы вряд ли слышали. Наша цель — превратить страх из темного и пугающего явления в понятный объект для изучения.
+                </h4>
+                <p>
+                    В базе справочника — сотни фобий с подробными описаниями, симптомами, историческими справками и рекомендациями. 
+                    Мы предлагаем не только энциклопедические знания, но и практические инструменты:
+                </p>
+                <ul>
+                    <li>тесты для определения скрытых страхов;</li>
+                    <li>подборки литературы;</li>
+                    <li>советы психологов;</li>
+                    <li>истории обычных людей, которые учатся жить со своими фобиями.</li>
+                </ul>
+                <em>
+                    «Фобос» открыт для всех, кто интересуется психологией, 
+                    хочет лучше понять себя или просто любит исследовать необычные стороны человеческой природы. 
+                    Заходите, здесь не стыдно бояться — здесь интересно узнавать.
+                </em>
+            </div>
+        </div>
+        <div class="index-sep"></div>
+        <div class="index-right-part">
+            <h2>Последние новости</h2>
+            {% if latest_news %}
+                <div class="news-list">
+                    {% for news in latest_news %}
+                        <div class="news-item">
+                            <strong>{{ news.title }}</strong>
+                            <p class="news-author">Автор: <span>{% if news.author != None %}{{ news.author }}{% else %}—{% endif %}</span></p>
+                            {% if news.description != "" %}<p class="news-desc">{{ news.description }}</p>{% endif %}
+                            <div class="news-last-row">
+                                <small class="news-date">Опубликована: {{ news.posted|date:"d.m.Y" }}, {{ news.posted.time }}</small>
+                                <a class="btn btn-info" href="{{ news.get_absolute_url }}">Читать далее</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="no-news">Новостей пока нет</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

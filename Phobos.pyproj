@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>Phobos</Name>
+    <RootNamespace>Phobos</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>4d402783-5e9d-407e-bcb7-3f4560ad6a3a</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>Phobos.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app\admin.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\forms.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="app\middleware.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Phobos\__init__.py" />
+    <Compile Include="Phobos\settings.py" />
+    <Compile Include="Phobos\urls.py" />
+    <Compile Include="Phobos\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="app\migrations\" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\app\" />
+    <Folder Include="app\static\app\awesome\" />
+    <Folder Include="app\static\app\awesome\css\" />
+    <Folder Include="app\static\app\awesome\webfonts\" />
+    <Folder Include="app\static\app\content\" />
+    <Folder Include="app\static\app\fonts\" />
+    <Folder Include="app\static\app\media\" />
+    <Folder Include="app\static\app\scripts\" />
+    <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app\" />
+    <Folder Include="media\" />
+    <Folder Include="Phobos\" />
+    <Folder Include="static\" />
+    <Folder Include="static\admin\" />
+    <Folder Include="static\admin\css\" />
+    <Folder Include="static\admin\css\vendor\" />
+    <Folder Include="static\admin\css\vendor\select2\" />
+    <Folder Include="static\admin\img\" />
+    <Folder Include="static\admin\img\gis\" />
+    <Folder Include="static\admin\js\" />
+    <Folder Include="static\admin\js\admin\" />
+    <Folder Include="static\admin\js\vendor\" />
+    <Folder Include="static\admin\js\vendor\jquery\" />
+    <Folder Include="static\admin\js\vendor\select2\" />
+    <Folder Include="static\admin\js\vendor\select2\i18n\" />
+    <Folder Include="static\admin\js\vendor\xregexp\" />
+    <Folder Include="static\app\" />
+    <Folder Include="static\app\awesome\" />
+    <Folder Include="static\app\awesome\css\" />
+    <Folder Include="static\app\awesome\webfonts\" />
+    <Folder Include="static\app\content\" />
+    <Folder Include="static\app\fonts\" />
+    <Folder Include="static\app\media\" />
+    <Folder Include="static\app\scripts\" />
+    <Folder Include="static\django_tinymce\" />
+    <Folder Include="static\tinymce\" />
+    <Folder Include="static\tinymce\icons\" />
+    <Folder Include="static\tinymce\icons\default\" />
+    <Folder Include="static\tinymce\langs\" />
+    <Folder Include="static\tinymce\models\" />
+    <Folder Include="static\tinymce\models\dom\" />
+    <Folder Include="static\tinymce\plugins\" />
+    <Folder Include="static\tinymce\plugins\accordion\" />
+    <Folder Include="static\tinymce\plugins\advlist\" />
+    <Folder Include="static\tinymce\plugins\anchor\" />
+    <Folder Include="static\tinymce\plugins\autolink\" />
+    <Folder Include="static\tinymce\plugins\autoresize\" />
+    <Folder Include="static\tinymce\plugins\autosave\" />
+    <Folder Include="static\tinymce\plugins\charmap\" />
+    <Folder Include="static\tinymce\plugins\codesample\" />
+    <Folder Include="static\tinymce\plugins\code\" />
+    <Folder Include="static\tinymce\plugins\directionality\" />
+    <Folder Include="static\tinymce\plugins\emoticons\" />
+    <Folder Include="static\tinymce\plugins\emoticons\js\" />
+    <Folder Include="static\tinymce\plugins\fullscreen\" />
+    <Folder Include="static\tinymce\plugins\help\" />
+    <Folder Include="static\tinymce\plugins\help\js\" />
+    <Folder Include="static\tinymce\plugins\help\js\i18n\" />
+    <Folder Include="static\tinymce\plugins\help\js\i18n\keynav\" />
+    <Folder Include="static\tinymce\plugins\image\" />
+    <Folder Include="static\tinymce\plugins\importcss\" />
+    <Folder Include="static\tinymce\plugins\insertdatetime\" />
+    <Folder Include="static\tinymce\plugins\link\" />
+    <Folder Include="static\tinymce\plugins\lists\" />
+    <Folder Include="static\tinymce\plugins\media\" />
+    <Folder Include="static\tinymce\plugins\nonbreaking\" />
+    <Folder Include="static\tinymce\plugins\pagebreak\" />
+    <Folder Include="static\tinymce\plugins\preview\" />
+    <Folder Include="static\tinymce\plugins\quickbars\" />
+    <Folder Include="static\tinymce\plugins\save\" />
+    <Folder Include="static\tinymce\plugins\searchreplace\" />
+    <Folder Include="static\tinymce\plugins\table\" />
+    <Folder Include="static\tinymce\plugins\visualblocks\" />
+    <Folder Include="static\tinymce\plugins\visualchars\" />
+    <Folder Include="static\tinymce\plugins\wordcount\" />
+    <Folder Include="static\tinymce\skins\" />
+    <Folder Include="static\tinymce\skins\content\" />
+    <Folder Include="static\tinymce\skins\content\dark\" />
+    <Folder Include="static\tinymce\skins\content\default\" />
+    <Folder Include="static\tinymce\skins\content\document\" />
+    <Folder Include="static\tinymce\skins\content\tinymce-5-dark\" />
+    <Folder Include="static\tinymce\skins\content\tinymce-5\" />
+    <Folder Include="static\tinymce\skins\content\writer\" />
+    <Folder Include="static\tinymce\skins\ui\" />
+    <Folder Include="static\tinymce\skins\ui\oxide-dark\" />
+    <Folder Include="static\tinymce\skins\ui\oxide\" />
+    <Folder Include="static\tinymce\skins\ui\tinymce-5-dark\" />
+    <Folder Include="static\tinymce\skins\ui\tinymce-5\" />
+    <Folder Include="static\tinymce\themes\" />
+    <Folder Include="static\tinymce\themes\silver\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="app\static\app\awesome\css\all.css" />
+    <Content Include="app\static\app\awesome\css\all.min.css" />
+    <Content Include="app\static\app\awesome\css\brands.css" />
+    <Content Include="app\static\app\awesome\css\brands.min.css" />
+    <Content Include="app\static\app\awesome\css\fontawesome.css" />
+    <Content Include="app\static\app\awesome\css\fontawesome.min.css" />
+    <Content Include="app\static\app\awesome\css\regular.css" />
+    <Content Include="app\static\app\awesome\css\regular.min.css" />
+    <Content Include="app\static\app\awesome\css\solid.css" />
+    <Content Include="app\static\app\awesome\css\solid.min.css" />
+    <Content Include="app\static\app\awesome\css\svg-with-js.css" />
+    <Content Include="app\static\app\awesome\css\svg-with-js.min.css" />
+    <Content Include="app\static\app\awesome\css\v4-font-face.css" />
+    <Content Include="app\static\app\awesome\css\v4-font-face.min.css" />
+    <Content Include="app\static\app\awesome\css\v4-shims.css" />
+    <Content Include="app\static\app\awesome\css\v4-shims.min.css" />
+    <Content Include="app\static\app\awesome\css\v5-font-face.css" />
+    <Content Include="app\static\app\awesome\css\v5-font-face.min.css" />
+    <Content Include="app\static\app\awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="app\static\app\awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="app\static\app\awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="app\static\app\awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="app\static\app\awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="app\static\app\awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="app\static\app\awesome\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="app\static\app\awesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="app\static\app\content\about.css" />
+    <Content Include="app\static\app\content\blog.css" />
+    <Content Include="app\static\app\content\blogpost.css" />
+    <Content Include="app\static\app\content\contact.css" />
+    <Content Include="app\static\app\content\index.css" />
+    <Content Include="app\static\app\content\links.css" />
+    <Content Include="app\static\app\content\newpost.css" />
+    <Content Include="app\static\app\content\pool.css" />
+    <Content Include="app\static\app\content\registration.css" />
+    <Content Include="app\static\app\content\videopost.css" />
+    <Content Include="app\static\app\media\banner1.jpg" />
+    <Content Include="app\static\app\media\banner2.jpg" />
+    <Content Include="app\static\app\media\banner3.jpg" />
+    <Content Include="app\static\app\media\banner4.jpg" />
+    <Content Include="app\static\app\media\boo.png" />
+    <Content Include="app\static\app\media\favicon.ico" />
+    <Content Include="app\static\app\media\ghost.jpg" />
+    <Content Include="app\static\app\media\phobos.png" />
+    <Content Include="app\static\app\media\poster_1.jpg" />
+    <Content Include="app\static\app\media\poster_2.jpg" />
+    <Content Include="app\static\app\media\ref1.png" />
+    <Content Include="app\static\app\media\ref2.png" />
+    <Content Include="app\static\app\media\ref3.png" />
+    <Content Include="app\static\app\media\ref4.png" />
+    <Content Include="app\static\app\media\ref5.png" />
+    <Content Include="app\static\app\media\video_1.mp4" />
+    <Content Include="app\static\app\media\video_1.ogv" />
+    <Content Include="app\static\app\media\video_1.webm" />
+    <Content Include="app\static\app\media\video_2.mp4" />
+    <Content Include="app\static\app\media\video_2.ogv" />
+    <Content Include="app\static\app\media\video_2.webm" />
+    <Content Include="app\templates\app\blog.html" />
+    <Content Include="app\templates\app\blogpost.html" />
+    <Content Include="app\templates\app\links.html" />
+    <Content Include="app\templates\app\newpost.html" />
+    <Content Include="app\templates\app\pool.html" />
+    <Content Include="app\templates\app\registration.html" />
+    <Content Include="app\templates\app\videopost.html" />
+    <Content Include="media\world_map.jpg" />
+    <Content Include="requirements.txt" />
+    <Content Include="db.sqlite3" />
+    <Content Include="app\static\app\content\bootstrap.css" />
+    <Content Include="app\static\app\content\bootstrap.min.css" />
+    <Content Include="app\static\app\content\site.css" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\static\app\scripts\bootstrap.js" />
+    <Content Include="app\static\app\scripts\bootstrap.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.map" />
+    <Content Include="app\static\app\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="app\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="app\static\app\scripts\respond.js" />
+    <Content Include="app\static\app\scripts\respond.min.js" />
+    <Content Include="app\static\app\scripts\_references.js" />
+    <Content Include="app\templates\app\about.html" />
+    <Content Include="app\templates\app\contact.html" />
+    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\templates\app\layout.html" />
+    <Content Include="app\templates\app\login.html" />
+    <Content Include="app\templates\app\loginpartial.html" />
+    <Content Include="static\admin\css\autocomplete.css" />
+    <Content Include="static\admin\css\base.css" />
+    <Content Include="static\admin\css\changelists.css" />
+    <Content Include="static\admin\css\dark_mode.css" />
+    <Content Include="static\admin\css\dashboard.css" />
+    <Content Include="static\admin\css\forms.css" />
+    <Content Include="static\admin\css\login.css" />
+    <Content Include="static\admin\css\nav_sidebar.css" />
+    <Content Include="static\admin\css\responsive.css" />
+    <Content Include="static\admin\css\responsive_rtl.css" />
+    <Content Include="static\admin\css\rtl.css" />
+    <Content Include="static\admin\css\unusable_password_field.css" />
+    <Content Include="static\admin\css\vendor\select2\LICENSE-SELECT2.md" />
+    <Content Include="static\admin\css\vendor\select2\select2.css" />
+    <Content Include="static\admin\css\vendor\select2\select2.min.css" />
+    <Content Include="static\admin\css\widgets.css" />
+    <Content Include="static\admin\img\calendar-icons.svg" />
+    <Content Include="static\admin\img\gis\move_vertex_off.svg" />
+    <Content Include="static\admin\img\gis\move_vertex_on.svg" />
+    <Content Include="static\admin\img\icon-addlink.svg" />
+    <Content Include="static\admin\img\icon-alert.svg" />
+    <Content Include="static\admin\img\icon-calendar.svg" />
+    <Content Include="static\admin\img\icon-changelink.svg" />
+    <Content Include="static\admin\img\icon-clock.svg" />
+    <Content Include="static\admin\img\icon-deletelink.svg" />
+    <Content Include="static\admin\img\icon-hidelink.svg" />
+    <Content Include="static\admin\img\icon-no.svg" />
+    <Content Include="static\admin\img\icon-unknown-alt.svg" />
+    <Content Include="static\admin\img\icon-unknown.svg" />
+    <Content Include="static\admin\img\icon-viewlink.svg" />
+    <Content Include="static\admin\img\icon-yes.svg" />
+    <Content Include="static\admin\img\inline-delete.svg" />
+    <Content Include="static\admin\img\LICENSE" />
+    <Content Include="static\admin\img\README.txt" />
+    <Content Include="static\admin\img\search.svg" />
+    <Content Include="static\admin\img\selector-icons.svg" />
+    <Content Include="static\admin\img\sorting-icons.svg" />
+    <Content Include="static\admin\img\tooltag-add.svg" />
+    <Content Include="static\admin\img\tooltag-arrowright.svg" />
+    <Content Include="static\admin\js\actions.js" />
+    <Content Include="static\admin\js\admin\DateTimeShortcuts.js" />
+    <Content Include="static\admin\js\admin\RelatedObjectLookups.js" />
+    <Content Include="static\admin\js\autocomplete.js" />
+    <Content Include="static\admin\js\calendar.js" />
+    <Content Include="static\admin\js\cancel.js" />
+    <Content Include="static\admin\js\change_form.js" />
+    <Content Include="static\admin\js\core.js" />
+    <Content Include="static\admin\js\filters.js" />
+    <Content Include="static\admin\js\inlines.js" />
+    <Content Include="static\admin\js\jquery.init.js" />
+    <Content Include="static\admin\js\nav_sidebar.js" />
+    <Content Include="static\admin\js\popup_response.js" />
+    <Content Include="static\admin\js\prepopulate.js" />
+    <Content Include="static\admin\js\prepopulate_init.js" />
+    <Content Include="static\admin\js\SelectBox.js" />
+    <Content Include="static\admin\js\SelectFilter2.js" />
+    <Content Include="static\admin\js\theme.js" />
+    <Content Include="static\admin\js\unusable_password_field.js" />
+    <Content Include="static\admin\js\urlify.js" />
+    <Content Include="static\admin\js\vendor\jquery\jquery.js" />
+    <Content Include="static\admin\js\vendor\jquery\jquery.min.js" />
+    <Content Include="static\admin\js\vendor\jquery\LICENSE.txt" />
+    <Content Include="static\admin\js\vendor\select2\i18n\af.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ar.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\az.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\bg.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\bn.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\bs.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ca.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\cs.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\da.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\de.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\dsb.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\el.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\en.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\es.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\et.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\eu.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\fa.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\fi.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\fr.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\gl.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\he.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\hi.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\hr.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\hsb.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\hu.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\hy.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\id.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\is.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\it.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ja.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ka.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\km.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ko.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\lt.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\lv.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\mk.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ms.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\nb.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ne.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\nl.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\pl.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ps.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\pt-BR.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\pt.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ro.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ru.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\sk.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\sl.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\sq.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\sr-Cyrl.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\sr.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\sv.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\th.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\tk.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\tr.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\uk.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\vi.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\zh-CN.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\zh-TW.js" />
+    <Content Include="static\admin\js\vendor\select2\LICENSE.md" />
+    <Content Include="static\admin\js\vendor\select2\select2.full.js" />
+    <Content Include="static\admin\js\vendor\select2\select2.full.min.js" />
+    <Content Include="static\admin\js\vendor\xregexp\LICENSE.txt" />
+    <Content Include="static\admin\js\vendor\xregexp\xregexp.js" />
+    <Content Include="static\admin\js\vendor\xregexp\xregexp.min.js" />
+    <Content Include="static\app\awesome\css\all.css" />
+    <Content Include="static\app\awesome\css\all.min.css" />
+    <Content Include="static\app\awesome\css\brands.css" />
+    <Content Include="static\app\awesome\css\brands.min.css" />
+    <Content Include="static\app\awesome\css\fontawesome.css" />
+    <Content Include="static\app\awesome\css\fontawesome.min.css" />
+    <Content Include="static\app\awesome\css\regular.css" />
+    <Content Include="static\app\awesome\css\regular.min.css" />
+    <Content Include="static\app\awesome\css\solid.css" />
+    <Content Include="static\app\awesome\css\solid.min.css" />
+    <Content Include="static\app\awesome\css\svg-with-js.css" />
+    <Content Include="static\app\awesome\css\svg-with-js.min.css" />
+    <Content Include="static\app\awesome\css\v4-font-face.css" />
+    <Content Include="static\app\awesome\css\v4-font-face.min.css" />
+    <Content Include="static\app\awesome\css\v4-shims.css" />
+    <Content Include="static\app\awesome\css\v4-shims.min.css" />
+    <Content Include="static\app\awesome\css\v5-font-face.css" />
+    <Content Include="static\app\awesome\css\v5-font-face.min.css" />
+    <Content Include="static\app\awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="static\app\awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="static\app\awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="static\app\awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="static\app\awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="static\app\awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="static\app\awesome\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="static\app\awesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="static\app\content\about.css" />
+    <Content Include="static\app\content\blog.css" />
+    <Content Include="static\app\content\blogpost.css" />
+    <Content Include="static\app\content\bootstrap.css" />
+    <Content Include="static\app\content\bootstrap.min.css" />
+    <Content Include="static\app\content\contact.css" />
+    <Content Include="static\app\content\index.css" />
+    <Content Include="static\app\content\links.css" />
+    <Content Include="static\app\content\newpost.css" />
+    <Content Include="static\app\content\pool.css" />
+    <Content Include="static\app\content\registration.css" />
+    <Content Include="static\app\content\site.css" />
+    <Content Include="static\app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="static\app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="static\app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\app\media\banner1.jpg" />
+    <Content Include="static\app\media\banner2.jpg" />
+    <Content Include="static\app\media\banner3.jpg" />
+    <Content Include="static\app\media\banner4.jpg" />
+    <Content Include="static\app\media\boo.png" />
+    <Content Include="static\app\media\favicon.ico" />
+    <Content Include="static\app\media\ghost.jpg" />
+    <Content Include="static\app\media\phobos.png" />
+    <Content Include="static\app\media\ref1.png" />
+    <Content Include="static\app\media\ref2.png" />
+    <Content Include="static\app\media\ref3.png" />
+    <Content Include="static\app\media\ref4.png" />
+    <Content Include="static\app\media\ref5.png" />
+    <Content Include="static\app\scripts\bootstrap.js" />
+    <Content Include="static\app\scripts\bootstrap.min.js" />
+    <Content Include="static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="static\app\scripts\respond.js" />
+    <Content Include="static\app\scripts\respond.min.js" />
+    <Content Include="static\django_tinymce\admin_tinymce.css" />
+    <Content Include="static\django_tinymce\init_tinymce.js" />
+    <Content Include="static\tinymce\icons\default\icons.min.js" />
+    <Content Include="static\tinymce\langs\ar.js" />
+    <Content Include="static\tinymce\langs\ar_SA.js" />
+    <Content Include="static\tinymce\langs\az.js" />
+    <Content Include="static\tinymce\langs\be.js" />
+    <Content Include="static\tinymce\langs\bg_BG.js" />
+    <Content Include="static\tinymce\langs\bn_BD.js" />
+    <Content Include="static\tinymce\langs\ca.js" />
+    <Content Include="static\tinymce\langs\cs.js" />
+    <Content Include="static\tinymce\langs\cy.js" />
+    <Content Include="static\tinymce\langs\da.js" />
+    <Content Include="static\tinymce\langs\de.js" />
+    <Content Include="static\tinymce\langs\el.js" />
+    <Content Include="static\tinymce\langs\eo.js" />
+    <Content Include="static\tinymce\langs\es.js" />
+    <Content Include="static\tinymce\langs\es_MX.js" />
+    <Content Include="static\tinymce\langs\et.js" />
+    <Content Include="static\tinymce\langs\eu.js" />
+    <Content Include="static\tinymce\langs\fa.js" />
+    <Content Include="static\tinymce\langs\fi.js" />
+    <Content Include="static\tinymce\langs\fr_FR.js" />
+    <Content Include="static\tinymce\langs\ga.js" />
+    <Content Include="static\tinymce\langs\gl.js" />
+    <Content Include="static\tinymce\langs\he_IL.js" />
+    <Content Include="static\tinymce\langs\hr.js" />
+    <Content Include="static\tinymce\langs\hu_HU.js" />
+    <Content Include="static\tinymce\langs\hy.js" />
+    <Content Include="static\tinymce\langs\id.js" />
+    <Content Include="static\tinymce\langs\is_IS.js" />
+    <Content Include="static\tinymce\langs\it.js" />
+    <Content Include="static\tinymce\langs\ja.js" />
+    <Content Include="static\tinymce\langs\kab.js" />
+    <Content Include="static\tinymce\langs\ka_GE.js" />
+    <Content Include="static\tinymce\langs\kk.js" />
+    <Content Include="static\tinymce\langs\ko_KR.js" />
+    <Content Include="static\tinymce\langs\ku.js" />
+    <Content Include="static\tinymce\langs\ky.js" />
+    <Content Include="static\tinymce\langs\lt.js" />
+    <Content Include="static\tinymce\langs\lv.js" />
+    <Content Include="static\tinymce\langs\nb_NO.js" />
+    <Content Include="static\tinymce\langs\ne.js" />
+    <Content Include="static\tinymce\langs\nl.js" />
+    <Content Include="static\tinymce\langs\nl_BE.js" />
+    <Content Include="static\tinymce\langs\oc.js" />
+    <Content Include="static\tinymce\langs\pl.js" />
+    <Content Include="static\tinymce\langs\pt_BR.js" />
+    <Content Include="static\tinymce\langs\pt_PT.js" />
+    <Content Include="static\tinymce\langs\README.md" />
+    <Content Include="static\tinymce\langs\ro.js" />
+    <Content Include="static\tinymce\langs\ru.js" />
+    <Content Include="static\tinymce\langs\sk.js" />
+    <Content Include="static\tinymce\langs\sl_SI.js" />
+    <Content Include="static\tinymce\langs\sq.js" />
+    <Content Include="static\tinymce\langs\sr.js" />
+    <Content Include="static\tinymce\langs\sv_SE.js" />
+    <Content Include="static\tinymce\langs\ta.js" />
+    <Content Include="static\tinymce\langs\tg.js" />
+    <Content Include="static\tinymce\langs\th_TH.js" />
+    <Content Include="static\tinymce\langs\tr.js" />
+    <Content Include="static\tinymce\langs\ug.js" />
+    <Content Include="static\tinymce\langs\uk.js" />
+    <Content Include="static\tinymce\langs\uz.js" />
+    <Content Include="static\tinymce\langs\vi.js" />
+    <Content Include="static\tinymce\langs\zh_CN.js" />
+    <Content Include="static\tinymce\langs\zh_HK.js" />
+    <Content Include="static\tinymce\langs\zh_MO.js" />
+    <Content Include="static\tinymce\langs\zh_SG.js" />
+    <Content Include="static\tinymce\langs\zh_TW.js" />
+    <Content Include="static\tinymce\license.md" />
+    <Content Include="static\tinymce\models\dom\model.min.js" />
+    <Content Include="static\tinymce\plugins\accordion\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\emoticons\js\emojiimages.js" />
+    <Content Include="static\tinymce\plugins\emoticons\js\emojiimages.min.js" />
+    <Content Include="static\tinymce\plugins\emoticons\js\emojis.js" />
+    <Content Include="static\tinymce\plugins\emoticons\js\emojis.min.js" />
+    <Content Include="static\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\ar.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\bg_BG.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\ca.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\cs.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\da.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\de.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\el.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\en.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\es.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\eu.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\fa.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\fi.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\fr_FR.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\he_IL.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\hi.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\hr.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\hu_HU.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\id.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\it.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\ja.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\kk.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\ko_KR.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\ms.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\nb_NO.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\nl.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\pl.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\pt_BR.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\pt_PT.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\ro.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\ru.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\sk.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\sl_SI.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\sv_SE.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\th_TH.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\tr.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\uk.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\vi.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\zh_CN.js" />
+    <Content Include="static\tinymce\plugins\help\js\i18n\keynav\zh_TW.js" />
+    <Content Include="static\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\quickbars\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="static\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="static\tinymce\skins\content\dark\content.js" />
+    <Content Include="static\tinymce\skins\content\dark\content.min.css" />
+    <Content Include="static\tinymce\skins\content\default\content.js" />
+    <Content Include="static\tinymce\skins\content\default\content.min.css" />
+    <Content Include="static\tinymce\skins\content\document\content.js" />
+    <Content Include="static\tinymce\skins\content\document\content.min.css" />
+    <Content Include="static\tinymce\skins\content\tinymce-5-dark\content.js" />
+    <Content Include="static\tinymce\skins\content\tinymce-5-dark\content.min.css" />
+    <Content Include="static\tinymce\skins\content\tinymce-5\content.js" />
+    <Content Include="static\tinymce\skins\content\tinymce-5\content.min.css" />
+    <Content Include="static\tinymce\skins\content\writer\content.js" />
+    <Content Include="static\tinymce\skins\content\writer\content.min.css" />
+    <Content Include="static\tinymce\skins\ui\oxide-dark\content.inline.js" />
+    <Content Include="static\tinymce\skins\ui\oxide-dark\content.inline.min.css" />
+    <Content Include="static\tinymce\skins\ui\oxide-dark\content.js" />
+    <Content Include="static\tinymce\skins\ui\oxide-dark\content.min.css" />
+    <Content Include="static\tinymce\skins\ui\oxide-dark\skin.js" />
+    <Content Include="static\tinymce\skins\ui\oxide-dark\skin.min.css" />
+    <Content Include="static\tinymce\skins\ui\oxide-dark\skin.shadowdom.js" />
+    <Content Include="static\tinymce\skins\ui\oxide-dark\skin.shadowdom.min.css" />
+    <Content Include="static\tinymce\skins\ui\oxide\content.inline.js" />
+    <Content Include="static\tinymce\skins\ui\oxide\content.inline.min.css" />
+    <Content Include="static\tinymce\skins\ui\oxide\content.js" />
+    <Content Include="static\tinymce\skins\ui\oxide\content.min.css" />
+    <Content Include="static\tinymce\skins\ui\oxide\skin.js" />
+    <Content Include="static\tinymce\skins\ui\oxide\skin.min.css" />
+    <Content Include="static\tinymce\skins\ui\oxide\skin.shadowdom.js" />
+    <Content Include="static\tinymce\skins\ui\oxide\skin.shadowdom.min.css" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5-dark\content.inline.js" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5-dark\content.inline.min.css" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5-dark\content.js" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5-dark\content.min.css" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5-dark\skin.js" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5-dark\skin.min.css" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.js" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.min.css" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5\content.inline.js" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5\content.inline.min.css" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5\content.js" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5\content.min.css" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5\skin.js" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5\skin.min.css" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5\skin.shadowdom.js" />
+    <Content Include="static\tinymce\skins\ui\tinymce-5\skin.shadowdom.min.css" />
+    <Content Include="static\tinymce\themes\silver\theme.min.js" />
+    <Content Include="static\tinymce\tinymce.d.ts" />
+    <Content Include="static\tinymce\tinymce.min.js" />
+    <None Include="static\app\scripts\jquery.validate-vsdoc.js" />
+    <None Include="static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="static\app\scripts\jquery-1.10.2.min.map" />
+    <Content Include="static\app\scripts\jquery.validate.js" />
+    <Content Include="static\app\scripts\jquery.validate.min.js" />
+    <Content Include="static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <None Include="static\app\scripts\_references.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.html">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.9</Version>
+      <Description>env (Python 3.9 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,26 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    {{ form.media }}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/newpost.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="newpost">
+        <h1 class="newpost-title">{{ title }}</h1>
+        <p class="newpost-note">Поле, заголовок которого выделен <span class="red-text">красным цветом</span>, обязательно для заполнения.</p><br />
+        <form class="newpost-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <span class="red-text"><label for="{{ form.title.id_for_label }}">{{ form.title.label }}:</label></span>
+            {{ form.title }}<br />
+            <label for="{{ form.description.id_for_label }}">{{ form.description.label }}:</label>
+            {{ form.description }}<br />
+            <label for="{{ form.image.id_for_label }}">{{ form.image.label }}:</label>
+            {{ form.image }}<br />
+            <span class="red-text"><label for="{{ form.content.id_for_label }}">{{ form.content.label }}:</label></span>
+            {{ form.content }}<br />
+            <input type="submit" name="button-submit" id="button-submit" value="Создать новость" class="btn btn-success" />
+        </form>
+    </div>
+{% endblock %}

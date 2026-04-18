@@ -1,0 +1,50 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/links.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="links">
+        <h3 class="links-title">{{ title }}:</h3>
+        <ol class="links-list">
+            <li>
+                <a href="https://probolezny.ru/fobiya/" target="_blank">
+                    <img src="{% static 'app/media/ref1.png' %}" alt="Logo 1" />
+                    Фобия: что это, ее виды, причины, симптомы,
+                    как справиться с фобией в статье психотерапевта Федотова И. А.
+                </a>
+                &nbsp;(Статья о симптомах фобий, их профилактике и лечении);
+            </li>
+            <li>
+                <a href="https://ast-academy.ru/blog/kak_preodolet_strahi_i_fobii_metody_psihologiceskoj_pomosi/" target="_blank">
+                    <img src="{% static 'app/media/ref2.png' %}" alt="Logo 2" />
+                    Как преодолеть страхи и фобии: методы психологической помощи
+                </a>
+                &nbsp;(Статья об отличии страхов от фобий и о способах преодоления фобий);
+            </li>
+            <li>
+                <a href="https://www.b17.ru/article/329653/" target="_blank">
+                    <img src="{% static 'app/media/ref3.png' %}" alt="Logo 3" />
+                    Психология страха: техники для работы со страхами
+                </a>
+                &nbsp;(Статья о необычных техниках борьбы с фобиями);
+            </li>
+            <li>
+                <a href="https://4brain.ru/blog/fears-typology/" target="_blank">
+                    <img src="{% static 'app/media/ref4.png' %}" alt="Logo 4" />
+                    Типология страхов. Самые распространенные страхи и фобии | Блог 4brain
+                </a>
+                &nbsp;(Статья о типах страхов и фобий);
+            </li>
+            <li>
+                <a href="https://daily.afisha.ru/relationship/4983-prikasatsya-k-pugovicam-nastoyaschaya-pytka-dlya-menya-kak-zhivut-lyudi-s-fobiyami/" target="_blank">
+                    <img src="{% static 'app/media/ref5.png' %}" alt="Logo 5" />
+                    Какие бывают фобии и как с ними живут люди - Афиша Daily
+                </a>
+                &nbsp;(Статья с историями людей, живущих с фобиями).
+            </li>
+        </ol>
+    </div>
+{% endblock %}

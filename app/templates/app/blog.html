@@ -1,0 +1,25 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/blog.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="blog">
+        <h1 class="blog-title">{{ title }}</h1>
+        <div class="blog-posts">
+            {% for post in posts %}
+                <div class="blog-post">
+                    <h2>{{ post.title }}</h2>
+                    <h4>Автор: <span>{% if post.author != None %}{{ post.author }}{% else %}—{% endif %}</span></h4>
+                    {% if post.description != "" %}<p>{{ post.description }}</p>{% endif %}
+                    <div class="post-last-row">
+                        <small>Опубликована: {{ post.posted.date }}, {{ post.posted.time }}</small>
+                        <a class="btn btn-info" href="{{ post.get_absolute_url }}">Читать далее</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

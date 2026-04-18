@@ -1,0 +1,55 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/blogpost.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="blogpost">
+        <div class="blogpost-top">
+            <div class="blogpost-header">
+                {% if post.image %}
+                    <img class="blogpost-img" src="{{ post.image.url }}" alt="Фотография новости" />
+                    <h1 class="blogpost-title blogpost-title-img">{{ post.title }}</h1>
+                {% else %}
+                    <h1 class="blogpost-title">{{ post.title }}</h1>
+                {% endif %}
+            </div>
+            <h3 class="blogpost-author">Автор новости: <span>{% if post.author != None %}{{ post.author }}{% else %}—{% endif %}</span></h3>
+            {% autoescape off %}<p class="blogpost-content">{{ post.content|linebreaksbr|safe }}</p>{% endautoescape %}
+            <div class="blogpost-last-row">
+                <small>Дата и время публикации новости: {{ post.posted.date }}, {{ post.posted.time }}</small>
+                <a class="btn btn-info" href="{% url 'blog' %}">Назад</a>
+            </div>
+        </div>
+        <hr class="hr-section" />
+        <div class="blogpost-bottom">
+            <h2 class="comments-title">Комментарии</h2>
+            {% if user.is_authenticated %}
+                <form class="form-add-comment" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" name="btn-submit" id="btn-submit" value="Отправить комментарий" class="btn btn-success" />
+                </form>
+            {% else %}
+                <p class="comments-no-auth">Для комментирования новостей необходимо авторизоваться!</p>
+            {% endif %}
+            {% for comment in comments %}
+                <div class="comment">
+                    <hr class="comment-hr" />
+                    <div class="comment-header">
+                        {% if comment.author == user %}<span class="my-comment">{{ comment.author }} ({{ comment.date.date }}, {{ comment.date.time }})</span>
+                        {% else %}{% if comment.author != None %}{{ comment.author }}{% else %}—{% endif %} ({{ comment.date.date }}, {{ comment.date.time }}){% endif %}
+                    </div>
+                    <p class="comment-text">{{ comment.text|linebreaksbr }}</p>
+                </div>
+            {% empty %}
+                <div class="no-comments">
+                    <hr class="comment-hr" />
+                    <p class="no-comments-message">Комментариев пока нет. Станьте первым, кто прокомментирует эту новость!</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

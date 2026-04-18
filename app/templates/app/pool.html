@@ -1,0 +1,253 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/pool.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="pool">
+        {% if form != None %}
+            <h1 class="pool-title">{{ title }}</h1>
+            <p class="pool-note">Поле, заголовок которого выделен <span class="orange-text">оранжевым цветом</span>, обязательно для заполнения.</p><br />
+            <form class="pool-form" method="post">
+                {% csrf_token %}
+                <span class="orange-text"><label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label></span>
+                {{ form.name }}<br />
+                <span class="orange-text"><label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label></span>
+                {{ form.email }}<br />
+                <label for="{{ form.age.id_for_label }}">{{ form.age.label }}</label>
+                {{ form.age }}<br />
+                <label for="{{ form.city.id_for_label }}">{{ form.city.label }}</label>
+                {{ form.city }}<br />
+                <span class="orange-text"><label for="{{ form.frequency_of_visits.id_for_label }}">{{ form.frequency_of_visits.label }}</label></span>
+                {{ form.frequency_of_visits }}
+                <span class="orange-text"><label for="{{ form.purpose_of_visit.id_for_label }}">{{ form.purpose_of_visit.label }}</label></span>
+                {{ form.purpose_of_visit }}
+                <label for="{{ form.visited_sections.id_for_label }}">{{ form.visited_sections.label }} (можно выбрать несколько)</label>
+                {{ form.visited_sections }}
+                <label for="{{ form.liked.id_for_label }}">{{ form.liked.label }} (можно выбрать несколько)</label>
+                {{ form.liked }}
+                <span class="orange-text"><label for="{{ form.ease_of_search.id_for_label }}">{{ form.ease_of_search.label }}</label></span>
+                {{ form.ease_of_search }}
+                <span class="orange-text"><label for="{{ form.how_scary.id_for_label }}">{{ form.how_scary.label }}</label></span>
+                {{ form.how_scary }}
+                <label for="{{ form.fears_of_animals.id_for_label }}">{{ form.fears_of_animals.label }}</label><br />
+                {{ form.fears_of_animals }}<br /><br />
+                <label for="{{ form.fears_of_nature.id_for_label }}">{{ form.fears_of_nature.label }}</label><br />
+                {{ form.fears_of_nature }}<br /><br />
+                <label for="{{ form.social_fears.id_for_label }}">{{ form.social_fears.label }}</label><br />
+                {{ form.social_fears }}<br /><br />
+                <label for="{{ form.medical_fears.id_for_label }}">{{ form.medical_fears.label }}</label><br />
+                {{ form.medical_fears }}<br /><br />
+                <label for="{{ form.fears_of_spaces.id_for_label }}">{{ form.fears_of_spaces.label }}</label><br />
+                {{ form.fears_of_spaces }}<br /><br />
+                <label for="{{ form.strange_and_rare.id_for_label }}">{{ form.strange_and_rare.label }}</label><br />
+                {{ form.strange_and_rare }}<br /><br />
+                <label for="{{ form.gender.id_for_label }}">{{ form.gender.label }}</label><br />
+                {{ form.gender }}<br /><br />
+                <label for="{{ form.flaws.id_for_label }}">{{ form.flaws.label }}</label>
+                {{ form.flaws }}<br />
+                <label for="{{ form.wishes.id_for_label }}">{{ form.wishes.label }}</label>
+                {{ form.wishes }}<br />
+                <label for="{{ form.share_a_story.id_for_label }}">{{ form.share_a_story.label }}</label>
+                {{ form.share_a_story }}<br />
+                <span class="orange-text"><label for="{{ form.consent_data.id_for_label }}">{{ form.consent_data.label }}</label></span>
+                {{ form.consent_data }}<br /><br />
+                <input type="submit" name="btn-ok" id="btn-ok" value="Отправить" class="btn btn-primary" />
+                <input type="reset" name="btn-reset" id="btn-reset" value="Очистить форму" class="btn btn-danger" />
+            </form>
+        {% else %}
+            <h1 class="pool-thanksgiving">Спасибо за отзыв!</h1>
+            <h3 class="pool-thanksgiving-2">Ваше мнение для нас очень важно!</h3><br />
+            <div class="pool-answers">
+                <p><b>{{ labels.name }} </b>{{ data.name }}</p>
+                <p><b>{{ labels.email }} </b><a href="mailto:{{ data.email }}">{{ data.email }}</a></p>
+                <p><b>{{ labels.age }} </b>
+                    {% if data.age != None %}
+                        {{ data.age }}
+                    {% else %}
+                        —
+                    {% endif %}
+                </p>
+                <p><b>{{ labels.city }} </b>
+                    {% if data.city != "" %}
+                        {{ data.city }}
+                    {% else %}
+                        —
+                    {% endif %}
+                </p>
+                <p><b>{{ labels.frequency_of_visits }}</b><br />{{ data.frequency_of_visits }}</p>
+                <p><b>{{ labels.purpose_of_visit }}</b><br />{{ data.purpose_of_visit }}</p>
+                <p><b>{{ labels.visited_sections }}</b><br />
+                    {% for option in data.visited_sections %}
+                        {% if not forloop.first %}
+                            {{ option.lower }}{% if not forloop.last %}, {% endif %}
+                        {% else %}
+                            {{ option }}{% if not forloop.last %}, {% endif %}
+                        {% endif %}
+                    {% empty %}
+                        —
+                    {% endfor %}
+                </p>
+                <p><b>{{ labels.liked }}</b><br />
+                    {% for option in data.liked %}
+                        {% if not forloop.first %}
+                            {{ option.lower }}{% if not forloop.last %}, {% endif %}
+                        {% else %}
+                            {{ option }}{% if not forloop.last %}, {% endif %}
+                        {% endif %}
+                    {% empty %}
+                        —
+                    {% endfor %}
+                </p>
+                <p><b>{{ labels.ease_of_search }} </b>{{ data.ease_of_search }}</p>
+                <p><b>{{ labels.how_scary }} </b>{{ data.how_scary }}</p>
+                <p><b>{{ labels.fears_of_animals }}</b><br />{{ data.fears_of_animals }}</p>
+                <p><b>{{ labels.fears_of_nature }}</b><br />{{ data.fears_of_nature }}</p>
+                <p><b>{{ labels.social_fears }}</b><br />{{ data.social_fears }}</p>
+                <p><b>{{ labels.medical_fears }}</b><br />{{ data.medical_fears }}</p>
+                <p><b>{{ labels.fears_of_spaces }}</b><br />{{ data.fears_of_spaces }}</p>
+                <p><b>{{ labels.strange_and_rare }}</b><br />{{ data.strange_and_rare }}</p>
+                <p><b>{{ labels.gender }} </b>{{ data.gender }}</p>
+                <p><b>{{ labels.flaws }}</b><br />
+                    {% if data.flaws != "" %}
+                        {{ data.flaws|linebreaksbr }}
+                    {% else %}
+                        —
+                    {% endif %}
+                </p>
+                <p><b>{{ labels.wishes }}</b><br />
+                    {% if data.wishes != "" %}
+                        {{ data.wishes|linebreaksbr }}
+                    {% else %}
+                        —
+                    {% endif %}
+                </p>
+                <p><b>{{ labels.share_a_story }}</b><br />
+                    {% if data.share_a_story != "" %}
+                        {{ data.share_a_story|linebreaksbr }}
+                    {% else %}
+                        —
+                    {% endif %}
+                </p>
+                <p><b>{{ labels.consent_data }} </b>
+                    {% if data.consent_data %}Да{% else %}Нет{% endif %}
+                </p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        function btn_ok_mouseover()
+        {
+            $('#btn-ok').css('color', 'yellow');
+        }
+
+        function btn_ok_mouseout()
+        {
+            $('#btn-ok').css('color', 'white');
+        }
+
+        function btn_reset_mouseover()
+        {
+            $('#btn-reset').css('color', 'yellow');
+        }
+
+        function btn_reset_mouseout()
+        {
+            $('#btn-reset').css('color', 'white');
+        }
+
+        function name_focus()
+        {
+            $('#id_name').css('background-color', 'cornsilk');
+        }
+
+        function name_blur()
+        {
+            $('#id_name').css('background-color', 'white');
+        }
+
+        function email_focus()
+        {
+            $('#id_email').css('background-color', 'cornsilk');
+        }
+
+        function email_blur()
+        {
+            $('#id_email').css('background-color', 'white');
+        }
+
+        function age_focus()
+        {
+            $('#id_age').css('background-color', 'cornsilk');
+        }
+
+        function age_blur()
+        {
+            $('#id_age').css('background-color', 'white');
+        }
+
+        function city_focus()
+        {
+            $('#id_city').css('background-color', 'cornsilk');
+        }
+
+        function city_blur()
+        {
+            $('#id_city').css('background-color', 'white');
+        }
+
+        function flaws_focus()
+        {
+            $('#id_flaws').css('background-color', 'cornsilk');
+        }
+
+        function flaws_blur()
+        {
+            $('#id_flaws').css('background-color', 'white');
+        }
+
+        function wishes_focus()
+        {
+            $('#id_wishes').css('background-color', 'cornsilk');
+        }
+
+        function wishes_blur()
+        {
+            $('#id_wishes').css('background-color', 'white');
+        }
+
+        function share_a_story_focus()
+        {
+            $('#id_share_a_story').css('background-color', 'cornsilk');
+        }
+
+        function share_a_story_blur()
+        {
+            $('#id_share_a_story').css('background-color', 'white');
+        }
+
+        $('#btn-ok').mouseover(btn_ok_mouseover);
+        $('#btn-ok').mouseout(btn_ok_mouseout);
+        $('#btn-reset').mouseover(btn_reset_mouseover);
+        $('#btn-reset').mouseout(btn_reset_mouseout);
+        $('#id_name').focus(name_focus);
+        $('#id_name').blur(name_blur);
+        $('#id_email').focus(email_focus);
+        $('#id_email').blur(email_blur);
+        $('#id_age').focus(age_focus);
+        $('#id_age').blur(age_blur);
+        $('#id_city').focus(city_focus);
+        $('#id_city').blur(city_blur);
+        $('#id_flaws').focus(flaws_focus);
+        $('#id_flaws').blur(flaws_blur);
+        $('#id_wishes').focus(wishes_focus);
+        $('#id_wishes').blur(wishes_blur);
+        $('#id_share_a_story').focus(share_a_story_focus);
+        $('#id_share_a_story').blur(share_a_story_blur);
+    </script>
+{% endblock %}

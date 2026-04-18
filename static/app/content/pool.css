@@ -1,0 +1,112 @@
+body {
+    background: linear-gradient(120deg, white, mediumspringgreen, yellow)
+}
+
+.pool {
+    min-height: 100vh
+}
+
+.pool p {
+    word-wrap: break-word
+}
+
+.pool-title {
+    text-align: center;
+    font-weight: bolder;
+    cursor: default
+}
+
+.pool-note {
+    font-size: larger;
+    cursor: default
+}
+
+.orange-text {
+    color: darkorange
+}
+
+.pool-form, .pool-answers {
+    font-size: large
+}
+
+.pool-form .form-control {
+    min-width: 33vw;
+    border: 1px solid black;
+    border-radius: 15px;
+    resize: none;
+    background-color: white
+}
+
+.pool-form textarea {
+    min-width: 50vw !important
+}
+
+.pool-form .form-control:focus {
+    border: 2px solid cyan;
+    box-shadow: blue 1px 1px
+}
+
+.pool-form .form-check-input {
+    list-style-type: none;
+    padding-left: 30px
+}
+
+.pool-form li > label {
+    font-size: medium;
+    font-weight: normal
+}
+
+.pool-form select {
+    min-width: fit-content;
+    padding: 5px;
+    border: 1px solid black
+}
+
+.pool-form #id_consent_data {
+    vertical-align: text-top
+}
+
+.pool-form #btn-ok {
+    font-size: large;
+    color: white
+}
+
+.pool-form #btn-reset {
+    margin-left: 10px;
+    font-size: large;
+    color: white
+}
+
+.pool a:active, .pool a:visited:active {
+    color: orange
+}
+
+.pool a:visited {
+    color: purple
+}
+
+.pool a:visited:hover {
+    color: brown
+}
+
+.pool-thanksgiving {
+    text-align: center;
+    font-weight: bolder;
+    color: orangered;
+    cursor: default
+}
+
+.pool-thanksgiving-2 {
+    text-align: center;
+    font-weight: bold;
+    color: darkviolet;
+    cursor: default
+}
+
+.pool-answers {
+    cursor: default
+}
+
+.pool-answers b {
+    font-weight: 800
+}

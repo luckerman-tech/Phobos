@@ -1,0 +1,57 @@
+body {
+    background: linear-gradient(120deg, cyan, lavender, white)
+}
+
+.newpost {
+    min-height: 100vh
+}
+
+.newpost p {
+    word-wrap: break-word
+}
+
+.newpost-title {
+    text-align: center;
+    font-weight: bolder;
+    cursor: default
+}
+
+.newpost-note {
+    font-size: larger;
+    cursor: default
+}
+
+.red-text {
+    color: red
+}
+
+.newpost-form {
+    font-size: large
+}
+
+.newpost-form .form-control {
+    min-width: 20vw;
+    border: 1px solid black;
+    border-radius: 15px;
+    resize: none
+}
+
+.newpost-form #id_description {
+    min-width: 40vw
+}
+
+.newpost-form .form-control:focus {
+    border: 2px solid orange;
+    box-shadow: darkorange 1px 1px;
+    background-color: cornsilk
+}
+
+.newpost-form #button-submit {
+    width: 20vw;
+    font-size: large;
+    border: 2px solid black
+}
+
+.newpost-form #button-submit:hover {
+    color: yellow
+}

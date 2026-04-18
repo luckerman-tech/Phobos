@@ -1,0 +1,36 @@
+body {
+    background: linear-gradient(90deg, white, sandybrown, orange)
+}
+
+.links {
+    min-height: 100vh
+}
+
+.links-title {
+    font-weight: bolder;
+    cursor: default
+}
+
+.links-list li {
+    padding-bottom: 5px;
+    font-style: italic;
+    font-size: larger
+}
+
+.links-list img {
+    height: 20px;
+    width: auto;
+    object-fit: cover
+}
+
+.links-list a:active, .links-list a:visited:active {
+    color: orange
+}
+
+.links-list a:visited {
+    color: purple
+}
+
+.links-list a:visited:hover {
+    color: brown
+}

@@ -1,0 +1,56 @@
+body {
+    background: linear-gradient(120deg, lightgreen, lightblue, lightcoral)
+}
+
+.contact {
+    min-height: 100vh
+}
+
+.contact-title {
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+    cursor: default
+}
+
+.contact-info {
+    font-size: larger
+}
+
+.fa-phone {
+    color: red
+}
+
+.fa-envelope {
+    color: orange
+}
+
+.contact-developer-info {
+    width: fit-content;
+    padding: 10px;
+    border: 10px solid red;
+    border-radius: 15px;
+    background-color: lavender;
+    font-size: larger
+}
+
+.contact-developer-info h3 {
+    margin-top: 0;
+    font-weight: bold
+}
+
+.fa-telegram {
+    color: blue
+}
+
+.contact a:active, .contact a:visited:active {
+    color: orange
+}
+
+.contact a:visited {
+    color: purple
+}
+
+.contact a:visited:hover {
+    color: brown
+}
