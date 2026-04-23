@@ -2,13 +2,12 @@
 Definition of forms.
 """
 
-from app.models import Blog, Comment
+from app.models import Blog, Comment, Category, Product
 from django import forms
 from django.db import models
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import ugettext_lazy as _
 from tinymce.widgets import TinyMCE
-import re
 
 class BootstrapAuthenticationForm(AuthenticationForm):
     """Authentication form which uses boostrap CSS."""
@@ -165,8 +164,28 @@ class BlogForm(forms.ModelForm):
             'class': 'form-control'}),
                    'content': TinyMCE()}
 
-    def clean_content(self):
-        content = self.cleaned_data['content']
-        content = content.replace('<br>', ' ').replace('<br/>', ' ').replace('<br />', ' ')
-        content = re.sub(r'\s+', ' ', content)
-        return content
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = ('title', 'desc',)
+        widgets = {'title': forms.TextInput({
+            'class': 'form-control',
+            'placeholder': 'Не более 100 символов'}),
+                   'desc': TinyMCE()}
+
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ('title', 'short_desc', 'full_desc', 'price', 'image', 'category',)
+        widgets = {'title': forms.TextInput({
+            'class': 'form-control',
+            'placeholder': 'Не более 100 символов'}),
+                   'short_desc': forms.Textarea({
+            'class': 'form-control',
+            'placeholder': 'Не более 1000 символов',
+            'rows': 8}),
+                   'full_desc': TinyMCE(),
+                   'price': forms.NumberInput({
+            'class': 'form-control'}),
+                   'image': forms.FileInput({
+            'class': 'form-control'})}

@@ -1,0 +1,30 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    {{ form.media }}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/newproduct.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <section class="newproduct">
+        <h1 class="newproduct-title">{{ title }}</h1>
+        <p class="newproduct-note">Поле, заголовок которого выделен <span class="red-text">красным цветом</span>, обязательно для заполнения.</p><br />
+        <form class="newproduct-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <span class="red-text"><label for="{{ form.title.id_for_label }}">{{ form.title.label }}:</label></span>
+            {{ form.title }}<br />
+            <label for="{{ form.short_desc.id_for_label }}">{{ form.short_desc.label }}:</label>
+            {{ form.short_desc }}<br />
+            <span class="red-text"><label for="{{ form.full_desc.id_for_label }}">{{ form.full_desc.label }}:</label></span>
+            {{ form.full_desc }}<br />
+            <span class="red-text"><label for="{{ form.price.id_for_label }}">{{ form.price.label }}:</label></span>
+            {{ form.price }}<br />
+            <span class="red-text"><label for="{{ form.image.id_for_label }}">{{ form.image.label }}:</label></span>
+            {{ form.image }}<br />
+            <span class="red-text"><label for="{{ form.category.id_for_label }}">{{ form.category.label }}:</label></span><br />
+            {{ form.category }}<br /><br />
+            <input type="submit" name="button-add-product" id="button-add-product" value="Создать элемент каталога" class="btn btn-success" />
+        </form>
+    </section>
+{% endblock %}

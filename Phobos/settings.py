@@ -10,8 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
+from dotenv import load_dotenv
 import os
 import posixpath
+
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,10 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '0dacafde-f85c-4bc4-8ee1-1804b75ac150'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+if not SECRET_KEY:
+    raise ValueError("SECRET_KEY environment variable is not set!")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = []
 
@@ -84,10 +89,6 @@ TINYMCE_DEFAULT_CONFIG = {
     'selector': '.tinymce',
     'theme': 'silver',
     'resize': False,
-    'forced_root_block': 'p',
-    'force_br_newlines': False,
-    'force_p_newlines': True,
-    'remove_trailing_brs': True,
     'plugins': '''
         advlist autolink lists link image charmap print preview hr anchor pagebreak
         searchreplace wordcount visualblocks visualchars code fullscreen

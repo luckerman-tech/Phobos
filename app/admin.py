@@ -1,8 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from tinymce.widgets import TinyMCE
-from app.models import Blog
-import re
+from app.models import Blog, Category, Product
 
 class BlogAdmin(admin.ModelAdmin):
     def formfield_for_dbfield(self, db_field, **kwargs):
@@ -10,17 +9,19 @@ class BlogAdmin(admin.ModelAdmin):
             kwargs['widget'] = TinyMCE()
         return super().formfield_for_dbfield(db_field, **kwargs)
 
-    def get_form(self, request, obj=None, **kwargs):
-        form = super().get_form(request, obj, **kwargs)
-        original_clean = getattr(form, 'clean_content', None)
-        
-        def clean_content(self):
-            content = self.cleaned_data['content']
-            content = content.replace('<br>', ' ').replace('<br/>', ' ').replace('<br />', ' ')
-            content = re.sub(r'\s+', ' ', content)
-            return content
-        
-        form.clean_content = clean_content
-        return form
+class CategoryAdmin(admin.ModelAdmin):
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        if db_field.name == 'desc':
+            kwargs['widget'] = TinyMCE()
+        return super().formfield_for_dbfield(db_field, **kwargs)
+
+class ProductAdmin(admin.ModelAdmin):
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        if db_field.name == 'full_desc':
+            kwargs['widget'] = TinyMCE()
+        return super().formfield_for_dbfield(db_field, **kwargs)
 
 admin.site.register(Blog, BlogAdmin)
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Product, ProductAdmin)
+

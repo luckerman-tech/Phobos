@@ -1,0 +1,71 @@
+body {
+    background-color: blanchedalmond
+}
+
+.catalog {
+    min-height: 100vh
+}
+
+.catalog h1, .catalog h3, .catalog a, .catalog div {
+    word-wrap: break-word
+}
+
+.catalog-title {
+    text-align: center;
+    font-weight: bolder;
+    cursor: default
+}
+
+.catalog-subtitle {
+    font-weight: bold;
+    color: green;
+    cursor: default
+}
+
+.catalog-categories {
+    line-height: 2;
+    margin-bottom: 20px
+}
+
+.catalog-category {
+    font-size: 14pt
+}
+
+.catalog-category:hover {
+    text-decoration: none
+}
+
+.catalog-category:visited {
+    color: purple
+}
+
+.catalog-category:active, .catalog-category:visited:active {
+    color: orange;
+    text-decoration: none
+}
+
+.catalog-category:visited:hover {
+    color: brown
+}
+
+.no-categories {
+    color: red;
+    font-size: 16pt;
+    text-align: center
+}
+
+.catalog .container-btn {
+    display: flex;
+    justify-content: center;
+    gap: 30px
+}
+
+.catalog .btn {
+    width: 20vw;
+    font-size: 14pt;
+    color: white
+}
+
+.catalog .btn:hover {
+    color: red
+}

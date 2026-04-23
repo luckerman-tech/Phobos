@@ -1,0 +1,22 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    {{ form.media }}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/newcategory.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <section class="newcategory">
+        <h1 class="newcategory-title">{{ title }}</h1>
+        <p class="newcategory-note">Поле, заголовок которого выделен <span class="red-text">красным цветом</span>, обязательно для заполнения.</p><br />
+        <form class="newcategory-form" method="post">
+            {% csrf_token %}
+            <span class="red-text"><label for="{{ form.title.id_for_label }}">{{ form.title.label }}:</label></span>
+            {{ form.title }}<br />
+            <label for="{{ form.desc.id_for_label }}">{{ form.desc.label }}:</label>
+            {{ form.desc }}<br />
+            <input type="submit" name="button-add-category" id="button-add-category" value="Создать категорию" class="btn btn-success" />
+        </form>
+    </section>
+{% endblock %}

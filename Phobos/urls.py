@@ -38,6 +38,11 @@ urlpatterns = [
     path('newpost/', views.newpost, name='newpost'),
     path('tinymce/', include('tinymce.urls')),
     path('videopost/', views.videopost, name='videopost'),
+    path('catalog/', views.catalog, name='catalog'),
+    path('category/<int:category_id>', views.category, name='category'),
+    path('product/<int:product_id>/', views.product, name='product'),
+    path('newcategory/', views.newcategory, name='newcategory'),
+    path('newproduct/', views.newproduct, name='newproduct'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

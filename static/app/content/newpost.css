@@ -36,14 +36,19 @@ body {
     resize: none
 }
 
-.newpost-form #id_description {
-    min-width: 40vw
-}
-
 .newpost-form .form-control:focus {
     border: 2px solid orange;
     box-shadow: darkorange 1px 1px;
     background-color: cornsilk
+}
+
+.newpost-form #id_description {
+    min-width: 40vw
+}
+
+.tox-tinymce {
+    border: 1px solid black !important;
+    border-radius: 15px !important
 }
 
 .newpost-form #button-submit {

@@ -1,0 +1,58 @@
+body {
+    background-color: blanchedalmond
+}
+
+.newcategory {
+    min-height: 100vh
+}
+
+.newcategory p, .newcategory h1, .newcategory span, .newcategory label {
+    word-wrap: break-word
+}
+
+.newcategory-title {
+    text-align: center;
+    font-weight: bolder;
+    cursor: default
+}
+
+.newcategory-note {
+    font-size: larger;
+    cursor: default
+}
+
+.red-text {
+    color: red
+}
+
+.newcategory-form {
+    font-size: large
+}
+
+.newcategory-form .form-control {
+    min-width: 20vw;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: white
+}
+
+.newcategory-form .form-control:focus {
+    border: 2px solid violet;
+    box-shadow: red 1px 1px;
+    background-color: cornsilk
+}
+
+.tox-tinymce {
+    border: 1px solid black !important;
+    border-radius: 15px !important
+}
+
+.newcategory-form #button-add-category {
+    width: 20vw;
+    font-size: large;
+    border: 2px solid black
+}
+
+.newcategory-form #button-add-category:hover {
+    color: yellow
+}
