@@ -1,0 +1,23 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/product.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <main class="product">
+        <section class="product-header">
+            <img class="product-image" src="{{ product.image.url }}" alt="Изображение продукта" />
+            <div class="product-title-category">
+                <h1 class="product-title">{{ product.title }}</h1>
+                <p class="product-category">Категория &laquo;{{ product.category.title }}&raquo;</p>
+            </div>
+        </section>
+        <section class="product-body">
+            {% autoescape off %}<div class="product-desc">{{ product.full_desc|safe }}</div>{% endautoescape %}
+            <p class="product-price">Цена: {{ product.price }} руб.</p>
+        </section>
+        <div class="container-btn"><a class="btn btn-danger" href="{{ product.category.get_absolute_url }}">Назад</a></div>
+    </main>
+{% endblock %}

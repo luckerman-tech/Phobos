@@ -17,7 +17,7 @@
                 {% endif %}
             </div>
             <h3 class="blogpost-author">Автор новости: <span>{% if post.author != None %}{{ post.author }}{% else %}—{% endif %}</span></h3>
-            {% autoescape off %}<p class="blogpost-content">{{ post.content|linebreaksbr|safe }}</p>{% endautoescape %}
+            {% autoescape off %}<div class="blogpost-content">{{ post.content|safe }}</div>{% endautoescape %}
             <div class="blogpost-last-row">
                 <small>Дата и время публикации новости: {{ post.posted.date }}, {{ post.posted.time }}</small>
                 <a class="btn btn-info" href="{% url 'blog' %}">Назад</a>

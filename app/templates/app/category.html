@@ -1,0 +1,35 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/category.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <main class="category">
+        <section class="category-header">
+            <h1 class="category-title">{{ category.title }}</h1>
+            {% if category.desc != "" %}{% autoescape off %}<div class="category-desc">{{ category.desc|safe }}</div>{% endautoescape %}{% endif %}
+        </section>
+        <section class="category-body">
+            <h3 class="category-subtitle">Товары и услуги данной категории:</h3>
+            {% if products %}
+                <div class="category-products">
+                    {% for product in products %}
+                        <div class="category-product">
+                            <img class="product-img" src="{{ product.image.url }}" alt="Изображение продукта" />
+                            <div class="category-product-title-desc">
+                                <a class="product-title" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                {% if product.short_desc != "" %}<p class="product-desc">{{ product.short_desc }}</p>{% endif %}
+                            </div>
+                            <span class="product-price">{{ product.price }} руб.</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="no-products">В этой категории пока нет товаров или услуг!</div>
+            {% endif %}
+        </section>
+        <div class="container-btn"><a class="btn btn-danger" href="{% url 'catalog' %}">Назад</a></div>
+    </main>
+{% endblock %}

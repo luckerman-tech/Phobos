@@ -12,10 +12,36 @@ body {
     word-wrap: break-word
 }
 
-.blogpost-title {
+.blogpost-header {
+    display: flex;
+    align-items: center;
     text-align: center;
+    background-color: violet;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 10px black
+}
+
+.blogpost-img {
+    width: 30%;
+    border: 1px solid black;
+    margin-right: 15px;
+    height: auto;
+    object-fit: cover;
+    cursor: default
+}
+
+.blogpost-title {
+    width: 100%;
+    margin: 0;
     font-weight: bolder;
     cursor: default
+}
+
+.blogpost-title-img {
+    width: 70% !important
 }
 
 .blogpost-author {

@@ -1,0 +1,28 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/catalog.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <main class="catalog">
+        <h1 class="catalog-title">{{ title }}</h1>
+        <h3 class="catalog-subtitle">Основные категории:</h3>
+        {% if categories %}
+            <ul class="catalog-categories">
+                {% for category in categories %}
+                    <li><a class="catalog-category" href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="no-categories">Каталог пока пустой!</div>
+        {% endif %}
+        {% if user.is_superuser %}
+            <div class="container-btn">
+                <a class="btn btn-info" href="{% url 'newcategory' %}">Добавить категорию</a>
+                <a class="btn btn-info" href="{% url 'newproduct' %}">Добавить товар или услугу</a>
+            </div>
+        {% endif %}
+    </main>
+{% endblock %}

@@ -1,0 +1,69 @@
+body {
+    background-color: blanchedalmond
+}
+
+.newproduct {
+    min-height: 100vh
+}
+
+.newproduct h1, .newproduct p, .newproduct span, .newproduct label {
+    word-wrap: break-word
+}
+
+.newproduct-title {
+    text-align: center;
+    font-weight: bolder;
+    cursor: default
+}
+
+.newproduct-note {
+    font-size: larger;
+    cursor: default
+}
+
+.red-text {
+    color: red
+}
+
+.newproduct-form {
+    font-size: large
+}
+
+.newproduct-form .form-control, .newproduct-form #id_category {
+    min-width: 20vw;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: white;
+    resize: none
+}
+
+.newproduct-form .form-control:focus {
+    border: 2px solid violet;
+    box-shadow: red 1px 1px;
+    background-color: cornsilk
+}
+
+.newproduct-form #id_short_desc {
+    min-width: 40vw
+}
+
+.tox-tinymce {
+    border: 1px solid black !important;
+    border-radius: 15px !important
+}
+
+.newproduct-form #id_category {
+    min-width: 40vw;
+    height: 5vh;
+    padding-left: 10px
+}
+
+.newproduct-form #button-add-product {
+    width: 20vw;
+    font-size: large;
+    border: 2px solid black
+}
+
+.newproduct-form #button-add-product:hover {
+    color: yellow
+}

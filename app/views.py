@@ -2,8 +2,8 @@
 Definition of views.
 """
 
-from app.forms import PoolForm, CommentForm, BlogForm
-from app.models import Blog, Comment
+from app.forms import PoolForm, CommentForm, BlogForm, CategoryForm, ProductForm
+from app.models import Blog, Comment, Category, Product
 from datetime import datetime
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -185,5 +185,88 @@ def videopost(request):
         {
             'title': 'Полезные видео',
             'year': datetime.now().year,
+        }
+    )
+
+def catalog(request):
+    assert isinstance(request, HttpRequest)
+    categories = Category.objects.all()
+    return render(
+        request,
+        'app/catalog.html',
+        {
+            'title': 'Каталог товаров и услуг',
+            'year': datetime.now().year,
+            'categories': categories,
+        }
+    )
+
+def category(request, category_id):
+    assert isinstance(request, HttpRequest)
+    cur_category = Category.objects.get(id=category_id)
+    products = Product.objects.filter(category=cur_category)
+    return render(
+        request,
+        'app/category.html',
+        {
+            'title': 'Категория',
+            'year': datetime.now().year,
+            'category': cur_category,
+            'products': products,
+        }
+    )
+
+def product(request, product_id):
+    assert isinstance(request, HttpRequest)
+    cur_product = Product.objects.get(id=product_id)
+    return render(
+        request,
+        'app/product.html',
+        {
+            'title': 'Продукт',
+            'year': datetime.now().year,
+            'product': cur_product,
+        }
+    )
+
+def newcategory(request):
+    assert isinstance(request, HttpRequest)
+    if not request.user.is_superuser:
+        return redirect('home')
+    if request.method == 'POST':
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('catalog')
+    else:
+        form = CategoryForm()
+    return render(
+        request,
+        'app/newcategory.html',
+        {
+            'title': 'Добавить категорию каталога',
+            'year': datetime.now().year,
+            'form': form,
+        }
+    )
+
+def newproduct(request):
+    assert isinstance(request, HttpRequest)
+    if not request.user.is_superuser:
+        return redirect('home')
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('catalog')
+    else:
+        form = ProductForm()
+    return render(
+        request,
+        'app/newproduct.html',
+        {
+            'title': 'Добавить элемент каталога',
+            'year': datetime.now().year,
+            'form': form,
         }
     )

@@ -44,6 +44,7 @@
                     <li><a href="{% url 'blog' %}">Новости</a></li>
                     {% if user.is_superuser %}<li><a href="{% url 'newpost' %}">Добавление новости</a></li>{% endif %}
                     <li><a href="{% url 'videopost' %}">Полезные видео</a></li>
+                    <li><a href="{% url 'catalog' %}">Каталог</a></li>
                 </ul>
                 {% include 'app/loginpartial.html' %}
             </div>
